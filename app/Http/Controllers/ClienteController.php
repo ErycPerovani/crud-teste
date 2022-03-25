@@ -3,9 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Models\ClienteModel;
 
 class ClienteController extends Controller
 {
+    private $objUser;
+    private $objCliente;
+
+    public function __construct()
+    {
+        $this->objUser=new User();
+        $this->objCliente=new ClienteModel();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +24,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        return view("index");
+        $user=$this->objUser->all();
+        return view("index", compact('user'));
     }
 
     /**
