@@ -24,8 +24,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        $user=$this->objUser->all();
-        return view("index", compact('user'));
+        $cliente=$this->objCliente->all();
+        return view("index", compact('cliente'));
     }
 
     /**

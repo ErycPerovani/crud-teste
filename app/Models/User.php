@@ -47,6 +47,6 @@ class User extends Authenticatable
 
     public function relCliente()
     {
-        return $this->belongsTo(ClienteModel::class, 'id');
+        return $this->hasMany(ClienteModel::class, 'id_user');
     }
 }

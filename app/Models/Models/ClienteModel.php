@@ -12,8 +12,8 @@ class ClienteModel extends Model
 
     protected $table='cliente';
 
-    public function relUser()
+    public function relUsers()
     {
-        return $this->belongsTo(User::class, 'id_user');
+        return $this->hasOne(User::class, 'id', 'id_user');
     }
 }

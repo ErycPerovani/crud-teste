@@ -16,26 +16,30 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
+                    <th scope="col">Token</th>
                     <th scope="col">Cliente_ID</th>
                     <th scope="col">Ações</th>
                  </tr>
             </thead>
             <tbody>
-                @foreach ($user as $users)
+                @foreach ($cliente as $clientes)
                     @php
-                        $cliente=$user->find($users->id)->relCliente;
+                        $user=$clientes->find($clientes->id)->relUsers;
                     @endphp
                     <tr>
-                        <th scope="row">{{$users->id}}</th>
-                        <td>{{$users->name}}</td>
-                        <td>{{$cliente->id}}</td>
+                        <th scope="row">{{$clientes->id}}</th>
+                        <td>{{$clientes->name}}</td>
+                        <td>{{$user->remember_token}}</td>
+                        <td>{{$clientes->id_user}}</td>
                         <td>
                             <a href="">
                                 <button class="btn btn-dark">vizualizar</button>
                             </a>
+
                             <a href="">
                                 <button class="btn btn-primary">Editar</button>
                             </a>
+
                             <a href="">
                                 <button class="btn btn-danger">Deletar</button>
                             </a>
