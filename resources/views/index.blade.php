@@ -11,6 +11,7 @@
     </div>
 
     <div class="col-6 m-auto">
+        @csrf
         <table class="table text-center">
             <thead class="thead-dark">
                 <tr>
@@ -40,7 +41,7 @@
                                 <button class="btn btn-primary">Editar</button>
                             </a>
 
-                            <a href="">
+                            <a href="{{url("cliente/$clientes->id")}}" class="js-del">
                                 <button class="btn btn-danger">Deletar</button>
                             </a>
                         </td>

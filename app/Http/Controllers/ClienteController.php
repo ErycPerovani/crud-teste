@@ -110,6 +110,8 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $del = $this->objCliente->destroy($id);
+
+        return ($del) ? "Deletado" : "Erro";
     }
 }
