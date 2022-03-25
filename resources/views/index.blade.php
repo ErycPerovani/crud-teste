@@ -36,7 +36,7 @@
                                 <button class="btn btn-dark">vizualizar</button>
                             </a>
 
-                            <a href="">
+                            <a href="{{url("cliente/$clientes->id/edit")}}">
                                 <button class="btn btn-primary">Editar</button>
                             </a>
 

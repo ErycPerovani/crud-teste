@@ -78,7 +78,10 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cliente=$this->objCliente->find($id);
+        $users=$this->objUser->all();
+
+        return view('create', compact('cliente', 'users'));
     }
 
     /**
@@ -88,9 +91,15 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ClienteRequest $request, $id)
     {
-        //
+        $this->objCliente->where(['id'=>$id])->update([
+            'name'=>$request->name,
+            'cpf'=>$request->cpf,
+            'id_user'=>$request->id_user
+        ]);
+
+        return redirect('cliente');
     }
 
     /**
