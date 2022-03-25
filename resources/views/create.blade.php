@@ -18,7 +18,7 @@
                 @endforeach
             </div>
         @endif
-        @if (asset($cliente))
+        @if (isset($cliente))
             <form name="Formulario de Editar" id="formEdit" method="post" action="{{url("cliente/$cliente->id")}}">
                 @method('PUT')
         @else
