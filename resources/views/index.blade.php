@@ -5,7 +5,7 @@
     <hr>
 
     <div class="text-center">
-        <a href="">
+        <a href="{{url("cliente/create")}}">
             <button class="btn btn-success">Criar</button>
         </a>
     </div>
@@ -32,7 +32,7 @@
                         <td>{{$user->remember_token}}</td>
                         <td>{{$clientes->id_user}}</td>
                         <td>
-                            <a href="">
+                            <a href="{{url("cliente/$clientes->id")}}">
                                 <button class="btn btn-dark">vizualizar</button>
                             </a>
 

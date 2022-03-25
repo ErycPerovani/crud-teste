@@ -57,7 +57,8 @@ class ClienteController extends Controller
      */
     public function show($id)
     {
-        //
+        $cliente=$this->objCliente->find($id);
+        return view("show", compact('cliente'));
     }
 
     /**

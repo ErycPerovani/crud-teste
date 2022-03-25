@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ClienteController::class, 'index']);
+Route::resource('/cliente', ClienteController::class);
