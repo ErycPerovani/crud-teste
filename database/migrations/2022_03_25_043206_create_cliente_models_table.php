@@ -16,7 +16,7 @@ class CreateClienteModelsTable extends Migration
         Schema::create('cliente', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('CPF');
+            $table->string('cpf');
             $table->BigInteger('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')
             ->onUpdate('cascade');

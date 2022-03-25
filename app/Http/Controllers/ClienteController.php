@@ -35,7 +35,8 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        $users=$this->objUser->all();
+        return view("create", compact('users'));
     }
 
     /**
@@ -46,7 +47,14 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cadastro = $this->objCliente->create([
+            'name'=>$request->name,
+            'cpf'=>$request->cpf,
+            'id_user'=>$request->id_user
+        ]);
+        if ($cadastro) {
+            return redirect('cliente');
+        }
     }
 
     /**

@@ -11,6 +11,11 @@ class ClienteModel extends Model
     use HasFactory;
 
     protected $table='cliente';
+    protected $fillable=[
+        'name',
+        'cpf',
+        'id_user'
+    ];
 
     public function relUsers()
     {
