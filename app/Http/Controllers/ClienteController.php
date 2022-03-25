@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ClienteRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Models\ClienteModel;
@@ -45,7 +46,7 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClienteRequest $request)
     {
         $cadastro = $this->objCliente->create([
             'name'=>$request->name,
